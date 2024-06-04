@@ -1,7 +1,7 @@
 /*
  * @Author: Chikit-L
  * @Date: 2024-06-04 18:09:30
- * @LastEditTime: 2024-06-04 20:06:39
+ * @LastEditTime: 2024-06-04 20:32:30
  * @FilePath: \ClashRule\ClashVerge.yaml
  * @Description: 原规则地址: https://raw.githubusercontent.com/Repcz/Tool/X/Clash/Meta/ClashVerge.yaml
  */
@@ -117,6 +117,8 @@ proxy-groups:
 
   - {name: 国际媒体, <<: *pg, icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/YouTube.png}
 
+  - {name: 学术期刊, <<: *pg, icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Scholar.png}
+
   - {name: 苹果服务, <<: *pg, icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple.png}
 
   - {name: Github, <<: *pg, icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/GitHub.png}
@@ -166,6 +168,9 @@ rule-providers:
   # 广告拦截
   AD: {<<: *d, format: text, path: ./rule-providers/AD.list, url: https://github.com/Repcz/Tool/raw/X/Clash/Rules/Reject.list}
 
+  # 学术期刊
+  Scholar: {<<: *c, format: text, path: ./rule-providers/Scholar.list,  url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Scholar.list}
+
   # 苹果服务
   Apple: {<<: *c, format: text, path: ./rule-providers/Apple.list,  url: https://github.com/Repcz/Tool/raw/X/Clash/Rules/Apple.list}
 
@@ -213,6 +218,7 @@ rules:
   #- RULE-SET,Download,DIRECT
   - RULE-SET,AD,广告拦截
   - RULE-SET,AI,AI
+  - RULE-SET,Scholar,学术期刊
   - RULE-SET,Apple,苹果服务
   - RULE-SET,Github,Github
   - RULE-SET,OneDrive,微软服务
