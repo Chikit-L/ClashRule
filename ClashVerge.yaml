@@ -1,6 +1,7 @@
+/*
  * @Author: Chikit-L
  * @Date: 2024-06-04 18:09:30
- * @LastEditTime: 2024-06-04 18:35:46
+ * @LastEditTime: 2024-06-04 20:06:39
  * @FilePath: \ClashRule\ClashVerge.yaml
  * @Description: 原规则地址: https://raw.githubusercontent.com/Repcz/Tool/X/Clash/Meta/ClashVerge.yaml
  */
@@ -116,7 +117,9 @@ proxy-groups:
 
   - {name: 国际媒体, <<: *pg, icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/YouTube.png}
 
-  - {name: 苹果服务, <<: *pg, icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple_1.png}
+  - {name: 苹果服务, <<: *pg, icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple.png}
+
+  - {name: Github, <<: *pg, icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/GitHub.png}
 
   - {name: 微软服务, <<: *pg, icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Microsoft.png}
 
@@ -166,9 +169,11 @@ rule-providers:
   # 苹果服务
   Apple: {<<: *c, format: text, path: ./rule-providers/Apple.list,  url: https://github.com/Repcz/Tool/raw/X/Clash/Rules/Apple.list}
 
+  # Github 
+  Github: {<<: *c, format: text, path: ./rule-providers/Github.list,  url: https://github.com/Repcz/Tool/raw/X/Clash/Rules/Github.list}
+
   # 微软服务 
   OneDrive: {<<: *c, format: text, path: ./rule-providers/OneDrive.list,  url: https://github.com/Repcz/Tool/raw/X/Clash/Rules/OneDrive.list}
-  Github: {<<: *c, format: text, path: ./rule-providers/Github.list,  url: https://github.com/Repcz/Tool/raw/X/Clash/Rules/Github.list}
   Microsoft: {<<: *c, format: text, path: ./rule-providers/Microsoft.list,  url: https://github.com/Repcz/Tool/raw/X/Clash/Rules/Microsoft.list}
 
   # 谷歌服务
@@ -209,8 +214,8 @@ rules:
   - RULE-SET,AD,广告拦截
   - RULE-SET,AI,AI
   - RULE-SET,Apple,苹果服务
+  - RULE-SET,Github,Github
   - RULE-SET,OneDrive,微软服务
-  - RULE-SET,Github,微软服务
   - RULE-SET,Microsoft,微软服务
   - RULE-SET,YouTube,国际媒体
   - RULE-SET,Google,谷歌服务
