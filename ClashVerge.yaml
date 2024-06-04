@@ -1,7 +1,7 @@
 /*
  * @Author: Chikit-L
  * @Date: 2024-06-04 18:09:30
- * @LastEditTime: 2024-06-04 18:13:14
+ * @LastEditTime: 2024-06-04 18:35:46
  * @FilePath: \ClashRule\ClashVerge.yaml
  * @Description: 原规则地址: https://raw.githubusercontent.com/Repcz/Tool/X/Clash/Meta/ClashVerge.yaml
  */
@@ -22,7 +22,6 @@ log-level: info
 global-client-fingerprint: chrome
 # 匹配所有进程（always/strict/off）
 find-process-mode: strict
-
 # 使用geoip.dat数据库
 geodata-mode: true
 geox-url:
@@ -35,7 +34,6 @@ profile:
   store-selected: true 
   # 持久化 fake-ip
   store-fake-ip: true  
-
 # 嗅探域名 可选配置
 sniffer:               
   enable: true
@@ -49,7 +47,6 @@ sniffer:
       override-destination: true
     QUIC:
       ports: [443, 8443]
-
 # Tun 配置  
 tun:
   enable: true
@@ -78,21 +75,29 @@ dns:
   nameserver: [quic://223.5.5.5, quic://223.6.6.6, https://1.12.12.12/dns-query, https://120.53.53.53/dns-query]                     
     
 # 策略组引用相关参数
-pg: &pg {type: select, proxies: [手动切换, 香港节点, 美国节点, 狮城节点, 日本节点, 台湾节点, 欧洲节点, DIRECT]}
+pg: &pg {type: select, proxies: [自动切换, 手动切换, 香港节点, 美国节点, 狮城节点, 日本节点, 台湾节点, 其他节点, DIRECT]}
+
 # 订阅更新和延迟测试相关参数
 p: &p {type: http, interval: 86400, health-check: {enable: true, url: http://latency-test.skk.moe/endpoint, interval: 1800}}
+
 # 自动选择策略组：选取延迟最低节点
 auto: &auto {type: url-test, lazy: true, url: http://latency-test.skk.moe/endpoint, interval: 300, tolerance: 0, include-all: true}
+
 # 手动选择策略组：手动选择想要的节点/策略组
 select: &select {type: select, include-all: true}
+
 # 故障回退策略组：策略组将按顺序选择你列表中第一个可用的节点
 fallback: &fallback {type: fallback, lazy: true, url: http://latency-test.skk.moe/endpoint, interval: 300, include-all: true}
+
 # 负载均衡策略组：不同的请求将使用不同的代理节点
 load-balance: &load-balance {type: load-balance, lazy: true, strategy: consistent-hashing, url: http://latency-test.skk.moe/endpoint, interval: 300, include-all: true}
+
 # classical规则相关
 c: &c {type: http, behavior: classical, interval: 86400}
+
 # domain规则相关
 d: &d {type: http, behavior: domain, interval: 86400}
+
 # ipcidr规则相关
 i: &i {type: http, behavior: ipcidr, interval: 86400}
 
@@ -102,10 +107,11 @@ proxy-providers:
     # Sub-Store生成的链接,可以直接替换上述url引号中的部分,具体见Sub-Store教程         
                
 proxy-groups:
-
   #分流分组
 
-  - {name: 手动切换, type: select, include-all: true, proxies: [香港节点, 美国节点, 狮城节点, 日本节点, 台湾节点, 欧洲节点, DIRECT], icon: https://github.com/clash-verge-rev/clash-verge-rev/raw/main/src/assets/image/logo.png}
+  - {name: 自动切换, type:  url-test, include-all: true, icon: https://github.com/clash-verge-rev/clash-verge-rev/raw/main/src/assets/image/logo.png}
+
+  - {name: 手动切换, type: select, include-all: true, proxies: [香港节点, 美国节点, 狮城节点, 日本节点, 台湾节点, 其他节点, DIRECT], icon: https://github.com/clash-verge-rev/clash-verge-rev/raw/main/src/assets/image/logo.png}
 
   - {name: 国外网站, <<: *pg, icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Global.png}
 
@@ -130,7 +136,7 @@ proxy-groups:
   - {name: 哔哩哔哩, type: select, proxies: [DIRECT, 香港节点, 台湾节点], icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/bilibili.png}
 
   - {name: 广告拦截, type: select, proxies: [REJECT, DIRECT], icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Advertising.png}
-
+  
   - {name: 兜底分流, <<: *pg, icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color//Final.png}
 
   #节点地区分组
@@ -145,7 +151,7 @@ proxy-groups:
 
   - {name: 台湾节点, <<: *auto, filter: "(?i)🇨🇳|🇹🇼|台湾|(\b(TW|Tai|Taiwan)\b)", icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/China.png}
 
-  - {name: 欧洲节点, <<: *auto, filter: "🇬🇧|🇫🇷|🇳🇱|🇮🇸|🇩🇪|🇺🇦|🇨🇭|🇪🇺", icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/European_Union.png}
+  - {name: 其他节点, <<: *auto, filter: "^(?!.*(?:🇭🇰|香港|\b(HK|Hong)\b|🇺🇸|美国|洛杉矶|圣何塞|\b(US|United States)\b|🇸🇬|新加坡|狮|\b(SG|Singapore)\b|🇯🇵|日本|东京|\b(JP|Japan)\b|🇨🇳|🇹🇼|台湾|\b(TW|Tai|Taiwan)\b)).*$", icon: https://raw.githubusercontent.com/Orz-3/mini/master/Color/Global.png}
 
 rule-providers:
 
@@ -153,9 +159,9 @@ rule-providers:
   Lan: {<<: *c, format: text, path: ./rule-providers/Lan.list,  url: https://github.com/Repcz/Tool/raw/X/Clash/Rules/Lan.list}
 
   # 下载服务
-  Download: {<<: *c, format: text, path: ./rule-providers/Download.list,  url: https://github.com/Repcz/Tool/raw/X/Clash/Rules/Download.list}
-      
-  #广告拦截
+  Download: {<<: *c, format: text, path: ./rule-providers/Download.list,  url: https://github.com/Repcz/Tool/raw/X/Clash/Rules/Download.list}   
+
+  # 广告拦截
   AD: {<<: *d, format: text, path: ./rule-providers/AD.list, url: https://github.com/Repcz/Tool/raw/X/Clash/Rules/Reject.list}
 
   # 苹果服务
@@ -167,7 +173,6 @@ rule-providers:
   Microsoft: {<<: *c, format: text, path: ./rule-providers/Microsoft.list,  url: https://github.com/Repcz/Tool/raw/X/Clash/Rules/Microsoft.list}
 
   # 谷歌服务
-  YouTube: {<<: *c, format: text, path: ./rule-providers/YouTube.list,  url: https://github.com/Repcz/Tool/raw/X/Clash/Rules/YouTube.list}
   Google: {<<: *c, format: text, path: ./rule-providers/Google.list,  url: https://github.com/Repcz/Tool/raw/X/Clash/Rules/Google.list}
 
   # 电报消息
@@ -193,6 +198,7 @@ rule-providers:
   Emby: {<<: *c, format: text, path: ./rule-providers/Emby.list,  url: https://github.com/Repcz/Tool/raw/X/Clash/Rules/Emby.list}
 
   # 国际媒体
+  YouTube: {<<: *c, format: text, path: ./rule-providers/YouTube.list,  url: https://github.com/Repcz/Tool/raw/X/Clash/Rules/YouTube.list}
   ProxyMedia: {<<: *c, format: text, path: ./rule-providers/ProxyMedia.list,  url: https://github.com/Repcz/Tool/raw/X/Clash/Rules/ProxyMedia.list}
 
   # 代理网站
@@ -207,7 +213,7 @@ rules:
   - RULE-SET,OneDrive,微软服务
   - RULE-SET,Github,微软服务
   - RULE-SET,Microsoft,微软服务
-  - RULE-SET,YouTube,谷歌服务
+  - RULE-SET,YouTube,国际媒体
   - RULE-SET,Google,谷歌服务
   - RULE-SET,Telegram,电报消息
   - RULE-SET,Twitter,推特消息
@@ -221,7 +227,6 @@ rules:
   - RULE-SET,Lan,DIRECT
   - GEOIP,CN,DIRECT
   - MATCH,兜底分流
-
 script:
   shortcuts:
     quic: network == 'udp' and dst_port == 443
