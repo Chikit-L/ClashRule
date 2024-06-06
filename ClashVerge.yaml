@@ -1,10 +1,12 @@
 ##########
- #Author: Chikit-L
- #Date: 2024-06-04 18:09:30
- #LastEditTime: 2024-06-06 08:55:10
- #FilePath: \ClashRule\ClashVerge.yaml
- #Description: 原规则地址: https://raw.githubusercontent.com/Repcz/Tool/X/Clash/Meta/ClashVerge.yaml
+ # Author: Chikit-L
+ # Date: 2024-06-04 18:09:30
+ # LastEditTime: 2024-06-06 15:10:17
+ # FilePath: \ClashRule\ClashVerge.yaml
+ # Description: 原规则地址: https://raw.githubusercontent.com/Repcz/Tool/X/Clash/Meta/ClashVerge.yaml
 ##########
+
+
 
 # 混合端口 HTTP和SOCKS5用一个端口
 mixed-port: 7893
@@ -216,12 +218,13 @@ rule-providers:
 rules:
   #- SCRIPT,quic,REJECT
   #- RULE-SET,Download,DIRECT  
+  - DOMAIN-SUFFIX,6666666.buzz,Emby # 音乐服
+  - DOMAIN-KEYWORD,zotero,学术期刊  # 使用关键字 zotero 进行匹配，跟随 学术期刊 规则
   - RULE-SET,AD,广告拦截
   - RULE-SET,AI,AI
   - RULE-SET,Scholar,学术期刊
   - RULE-SET,Apple,苹果服务
   - RULE-SET,Github,Github
-  - DOMAIN-KEYWORD,zotero,学术期刊  # 使用关键字 zotero 进行匹配，跟随 ChinaDomain 规则
   - RULE-SET,OneDrive,微软服务
   - RULE-SET,Microsoft,微软服务
   - RULE-SET,YouTube,国际媒体
