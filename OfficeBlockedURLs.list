@@ -1,17 +1,17 @@
 # 办公期间被屏蔽的地址
 
-- DOMAIN-SUFFIX,ablesci.com
-- DOMAIN-SUFFIX,52pojie.cn
-- DOMAIN-SUFFIX,y.qq.com
-- DOMAIN-SUFFIX,servicewechat.com
-- DOMAIN-SUFFIX,bilibili.com
-- DOMAIN-SUFFIX,douyin.com
-- DOMAIN-SUFFIX,xiaohongshu.com
-- DOMAIN-SUFFIX,music.163.com
-- DOMAIN-SUFFIX,iqiyi.com
-- DOMAIN-SUFFIX,v.qq.com
-- DOMAIN-SUFFIX,sspai.com
-- DOMAIN-SUFFIX,lastpass.com
-- DOMAIN-SUFFIX,jianshu.com
-- DOMAIN-SUFFIX,xyaz.cn
-- DOMAIN-SUFFIX,microvirt.com
+DOMAIN-SUFFIX,ablesci.com
+DOMAIN-SUFFIX,52pojie.cn
+DOMAIN-SUFFIX,y.qq.com
+DOMAIN-SUFFIX,servicewechat.com
+DOMAIN-SUFFIX,bilibili.com
+DOMAIN-SUFFIX,douyin.com
+DOMAIN-SUFFIX,xiaohongshu.com
+DOMAIN-SUFFIX,music.163.com
+DOMAIN-SUFFIX,iqiyi.com
+DOMAIN-SUFFIX,v.qq.com
+DOMAIN-SUFFIX,sspai.com
+DOMAIN-SUFFIX,lastpass.com
+DOMAIN-SUFFIX,jianshu.com
+DOMAIN-SUFFIX,xyaz.cn
+DOMAIN-SUFFIX,microvirt.com
