@@ -1,7 +1,7 @@
 ##########
  # Author: Chikit-L
  # Date: 2024-06-07 15:15:10
- # LastEditTime: 2024-06-08 19:59:24
+ # LastEditTime: 2024-06-08 22:02:07
  # FilePath: \ClashRule\ClashVerge.yaml
  # Description: 原规则地址: https://raw.githubusercontent.com/Repcz/Tool/X/Clash/Meta/ClashVerge.yaml
 ##########
@@ -168,7 +168,7 @@ rule-providers:
   Download: {<<: *c, format: text, path: ./rule-providers/Download.list,  url: https://github.com/Repcz/Tool/raw/X/Clash/Rules/Download.list}   
 
   # 上班摸鱼
-  Slack: {<<: *d, format: text, path: ./rule-providers/Slack.list, url: https://raw.githubusercontent.com/Chikit-L/ClashRule/main/Slack.list}
+  Slack: {<<: *c, format: text, path: ./rule-providers/Slack.list, url: https://raw.githubusercontent.com/Chikit-L/ClashRule/main/Slack.list}
 
   # 广告拦截
   AD: {<<: *d, format: text, path: ./rule-providers/AD.list, url: https://github.com/Repcz/Tool/raw/X/Clash/Rules/Reject.list}
