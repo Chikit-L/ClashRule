@@ -6,8 +6,6 @@ DOMAIN-SUFFIX,y.qq.com
 DOMAIN-SUFFIX,servicewechat.com
 DOMAIN-SUFFIX,bilibili.com
 DOMAIN-SUFFIX,douyin.com
-DOMAIN-SUFFIX,xiaohongshu.com # 小红书
-DOMAIN-SUFFIX,xhscdn.com # 小红书
 DOMAIN-SUFFIX,music.163.com
 DOMAIN-SUFFIX,iqiyi.com
 DOMAIN-SUFFIX,v.qq.com
@@ -16,3 +14,7 @@ DOMAIN-SUFFIX,lastpass.com
 DOMAIN-SUFFIX,jianshu.com
 DOMAIN-SUFFIX,xyaz.cn
 DOMAIN-SUFFIX,microvirt.com
+
+# 小红书
+DOMAIN-SUFFIX,xiaohongshu.com 
+DOMAIN-SUFFIX,xhscdn.com
