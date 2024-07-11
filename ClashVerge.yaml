@@ -1,7 +1,7 @@
 ##########
  # Author: Chikit-L
  # Date: 2024-06-07 15:15:10
- # LastEditTime: 2024-07-09 10:24:21
+ # LastEditTime: 2024-07-11 16:55:09
  # FilePath: \ClashRule\ClashVerge.yaml
  # Description: 原规则地址: https://raw.githubusercontent.com/Repcz/Tool/X/Clash/Meta/ClashVerge.yaml
 ##########
@@ -103,7 +103,16 @@ d: &d {type: http, behavior: domain, interval: 86400}
 i: &i {type: http, behavior: ipcidr, interval: 86400}
 
 proxy-providers:
-  Subscribe: {<<: *p, path: ./proxy-providers/Sub.yaml, url: http://your-service-provider}
+  provider1:
+    <<: *p
+    path: ./proxy-providers/provider1.yaml
+    url: http://your-service-provider1
+
+  provider2:
+    <<: *p
+    path: ./proxy-providers/provider2.yaml
+    url: http://your-service-provider2
+    
     # 在此将"http://your-service-provider"替换为你的机场订阅，推荐使用base64或者node list
     # Sub-Store生成的链接,可以直接替换上述url引号中的部分,具体见Sub-Store教程         
                
