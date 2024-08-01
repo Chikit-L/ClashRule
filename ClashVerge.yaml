@@ -1,34 +1,30 @@
 ##########
  # Author: Chikit-L
  # Date: 2024-06-07 15:15:10
- # LastEditTime: 2024-07-13 17:17:37
+ # LastEditTime: 2024-08-01 08:48:48
  # FilePath: \ClashRule\ClashVerge.yaml
  # Description: 原规则地址: https://raw.githubusercontent.com/Repcz/Tool/X/Clash/Meta/ClashVerge.yaml
 ##########
 
 
-# 混合端口 HTTP和SOCKS5用一个端口
-mixed-port: 7893
-# TCP 并发连接所有 IP, 将使用最快握手的 TCP
+# 混合端口，用于 HTTP 和 SOCKS5 代理
+mixed-port: 7890
+# 统一延迟，减少对不同节点的延迟差异
+unified-delay: true
+# TCP 并发连接所有 IP，使用最快握手的 TCP 连接
 tcp-concurrent: true
-# 允许局域网的连接（可用来共享代理）
-allow-lan: true
-# 开启 IPv6 总开关，关闭阻断所有 IPv6 链接和屏蔽 DNS 请求 AAAA 记录  
-ipv6: false
-# 规则模式：rule/global/direct/script
+# 全局客户端指纹，模拟 Firefox 浏览器
+global-client-fingerprint: firefox
+# 不允许局域网的连接
+allow-lan: false
+# 使用规则模式进行流量管理
 mode: rule
-# 设置日志输出级别: silent/error/warning/info/debug
-log-level: info
-# 全局 TLS 指纹
-global-client-fingerprint: chrome
-# 匹配所有进程（always/strict/off）
-find-process-mode: strict
-# 使用geoip.dat数据库
-geodata-mode: true
+# GeoIP 数据库和 GeoSite 数据库的 URL
 geox-url:
-  geoip: "https://mirror.ghproxy.com/https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip-lite.dat"
-  geosite: "https://mirror.ghproxy.com/https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geosite.dat"
-  mmdb: "https://mirror.ghproxy.com/https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/country-lite.mmdb"
+  geoip: 'https://github.com/Loyalsoldier/geoip/releases/latest/download/geoip.dat'
+  geosite: 'https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat'
+  mmdb: 'https://github.com/Loyalsoldier/geoip/releases/latest/download/Country.mmdb'
+
                          
 profile:
   # 存储 select 选择记录
