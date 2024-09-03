@@ -1,7 +1,7 @@
 ##########
  # Author: Chikit-L
  # Date: 2024-06-07 15:15:10
- # LastEditTime: 2024-08-01 08:48:48
+ # LastEditTime: 2024-09-03 09:49:42
  # FilePath: \ClashRule\ClashVerge.yaml
  # Description: 原规则地址: https://raw.githubusercontent.com/Repcz/Tool/X/Clash/Meta/ClashVerge.yaml
 ##########
@@ -229,7 +229,12 @@ rule-providers:
 rules:
   #- SCRIPT,quic,REJECT
   #- RULE-SET,Download,DIRECT  
-  - DOMAIN-SUFFIX,innoreader.com,国外网站
+ rules:
+  #- SCRIPT,quic,REJECT
+  #- RULE-SET,Download,DIRECT
+  - DOMAIN-KEYWORD,python,国外网站   
+  - DOMAIN-KEYWORD,innoreader,国外网站
+  - DOMAIN-KEYWORD,z-library,国外网站
   - DOMAIN-SUFFIX,dify.ai,AI
   - DOMAIN-KEYWORD,vscode,国外网站 # vscode
   - DOMAIN-SUFFIX,6666666.buzz,Emby # 音乐服
@@ -260,6 +265,10 @@ rules:
   - RULE-SET,Lan,DIRECT
   - GEOIP,CN,DIRECT
   - MATCH,兜底分流
+script:
+  shortcuts:
+    quic: network == 'udp' and dst_port == 443
+
 script:
   shortcuts:
     quic: network == 'udp' and dst_port == 443
