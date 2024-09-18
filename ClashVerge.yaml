@@ -1,7 +1,7 @@
 ##########
  # Author: Chikit-L
  # Date: 2024-06-07 15:15:10
- # LastEditTime: 2024-09-03 09:49:42
+ # LastEditTime: 2024-09-18 21:07:33
  # FilePath: \ClashRule\ClashVerge.yaml
  # Description: 原规则地址: https://raw.githubusercontent.com/Repcz/Tool/X/Clash/Meta/ClashVerge.yaml
 ##########
@@ -119,7 +119,7 @@ proxy-groups:
 
   - {name: 手动切换, type: select, include-all: true, proxies: [香港节点, 美国节点, 狮城节点, 日本节点, 台湾节点, 其他节点, DIRECT], icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Available.png}
 
-  - {name: 上班摸鱼, type: fallback, url: "https://www.52pojie.cn/",  interval: 300, proxies: [DIRECT, 香港节点, 美国节点, 狮城节点, 日本节点, 台湾节点, 其他节点] , icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Want_Want.png}
+  - {name: 上班摸鱼, type: fallback, url: "https://www.52pojie.cn/",  interval: 300, proxies: [DIRECT, 香港节点, 美国节点, 狮城节点, 日本节点, 台湾节点, 其他节点] , icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/fish.svg}
 
   - {name: 国外网站, <<: *pg, icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Airport.png}
 
