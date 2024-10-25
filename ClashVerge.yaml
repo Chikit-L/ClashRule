@@ -1,7 +1,7 @@
 ##########
  # Author: Chikit-L
  # Date: 2024-06-07 15:15:10
- # LastEditTime: 2024-10-13 21:10:39
+ # LastEditTime: 2024-10-25 21:21:20
  # FilePath: \ClashRule\ClashVerge.yaml
  # Description: 原规则地址: https://raw.githubusercontent.com/Repcz/Tool/X/Clash/Meta/ClashVerge.yaml
 ##########
@@ -232,6 +232,7 @@ rules:
  rules:
   #- SCRIPT,quic,REJECT
   #- RULE-SET,Download,DIRECT
+  - DOMAIN-KEYWORD,Termius,国外网站 
   - DOMAIN-KEYWORD,serv00,国外网站   
   - DOMAIN-KEYWORD,python,国外网站   
   - DOMAIN-KEYWORD,innoreader,国外网站
