@@ -29,12 +29,13 @@ DOMAIN-KEYWORD,nga
 DOMAIN-KEYWORD,battlenet
 DOMAIN,wup.browser.qq.com
 DOMAIN-KEYWORD,blzstatic
-DOMAIN-KEYWORD,xhscdn
-DOMAIN-KEYWORD,xiaohongshu
+DOMAIN-KEYWORD,xhscdn 
+DOMAIN-KEYWORD,xiaohongshu 
+DOMAIN-SUFFIX,sns-avatar-qc.xhscdn.com
+DOMAIN-SUFFIX,sns-webpic-qc.xhscdn.com
 DOMAIN-SUFFIX,doubao.com
 DOMAIN-KEYWORD,blizzard
 DOMAIN-SUFFIX,music.126.net
 DOMAIN-SUFFIX,help.jianguoyun.com
-DOMAIN,sns-webpic-qc.xhscdn.com
 DOMAIN-KEYWORD,clashofclans
 DOMAIN-SUFFIX,deepseek.com
