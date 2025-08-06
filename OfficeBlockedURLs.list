@@ -11,7 +11,10 @@ DOMAIN-SUFFIX,iqiyi.com
 DOMAIN-SUFFIX,v.qq.com
 DOMAIN-SUFFIX,y.qq.com
 DOMAIN-KEYWORD,qqmusic
+DOMAIN-KEYWORD,tencentmusic
 DOMAIN-SUFFIX,qqmusic.qq.com
+DOMAIN-SUFFIX,dldir1.qq.com
+DOMAIN-SUFFIX,oth.eve.mdt.qq.com
 DOMAIN-SUFFIX,y.gtimg.cn
 DOMAIN-SUFFIX,gj.qq
 DOMAIN-SUFFIX,sspai.com
@@ -33,6 +36,7 @@ DOMAIN-KEYWORD,xhscdn
 DOMAIN-KEYWORD,xiaohongshu 
 DOMAIN-SUFFIX,sns-avatar-qc.xhscdn.com
 DOMAIN-SUFFIX,sns-webpic-qc.xhscdn.com
+DOMAIN-SUFFIX,picasso-static.xiaohongshu.com
 DOMAIN-SUFFIX,doubao.com
 DOMAIN-KEYWORD,blizzard
 DOMAIN-SUFFIX,music.126.net
